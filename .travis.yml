@@ -72,6 +72,7 @@ before_install:
 before_script:
   - ./autogen.sh
   - ./configure CPPFLAGS=-Werror
+  - grep -i symver config.h
 
 script:
   - make -k
