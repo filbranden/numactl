@@ -15,69 +15,22 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - gcc-10
-    - name: "gcc 9"
-      env: MATRIX_ENV="CC=gcc-9 CXX=g++-9"
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - gcc-9
-    - name: "gcc 8"
-      env: MATRIX_ENV="CC=gcc-8 CXX=g++-8"
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - gcc-8
-    - name: "gcc 7"
-      env: MATRIX_ENV="CC=gcc-7 CXX=g++-7"
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - gcc-7
-    - name: "gcc 6"
-      env: MATRIX_ENV="CC=gcc-6 CXX=g++-6"
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - gcc-6
-    - name: "gcc 5"
-      dist: xenial
-      env: MATRIX_ENV="CC=gcc-5 CXX=g++-5"
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - gcc-5
-    - name: "gcc 4.9"
-      dist: xenial
-      env: MATRIX_ENV="CC=gcc-4.9 CXX=g++-4.9"
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - gcc-4.9
     - name: "clang 10"
+      compiler: clang
       env: MATRIX_ENV="CC=clang-10 CXX=clang++-10"
       addons:
         apt:
           packages:
             - clang-9
     - name: "clang 9"
+      compiler: clang
       env: MATRIX_ENV="CC=clang-9 CXX=clang++-9"
       addons:
         apt:
           packages:
             - clang-9
     - name: "clang 8"
+      compiler: clang
       env: MATRIX_ENV="CC=clang-8 CXX=clang++-8"
       addons:
         apt:
