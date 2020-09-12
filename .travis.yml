@@ -65,6 +65,24 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - gcc-4.9
+    - name: "clang 10"
+      env: MATRIX_ENV="CC=clang-10 CXX=clang++-10"
+      addons:
+        apt:
+          packages:
+            - clang-9
+    - name: "clang 9"
+      env: MATRIX_ENV="CC=clang-9 CXX=clang++-9"
+      addons:
+        apt:
+          packages:
+            - clang-9
+    - name: "clang 8"
+      env: MATRIX_ENV="CC=clang-8 CXX=clang++-8"
+      addons:
+        apt:
+          packages:
+            - clang-8
 
 before_install:
   - eval "${MATRIX_ENV}"
