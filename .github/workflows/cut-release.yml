@@ -41,8 +41,8 @@ jobs:
           committer_name: GitHub Actions
           committer_email: actions@github.com
           tag: "-a v${{ steps.bump-version-file.outputs.NEW_VERSION }} -m 'Release numactl ${{ steps.bump-version-file.outputs.NEW_VERSION }}'"
-      - name: Checkout code 
-        uses: actions/checkout@v3
+      - name: Update local checkout
+        run: git pull
       - name: Create Release
         id: create_release
         uses: marvinpinto/action-automatic-releases@v1.2.1
