@@ -1,4 +1,4 @@
-name: "cut-release"
+name: "Cut a new Release"
 
 on:
   workflow_dispatch:
@@ -40,14 +40,13 @@ jobs:
           message: "Release numactl ${{ steps.bump-version-file.outputs.NEW_VERSION }}"
           committer_name: GitHub Actions
           committer_email: actions@github.com
+          tag: "-a v${{ steps.bump-version-file.outputs.NEW_VERSION }} -m 'Release numactl ${{ steps.bump-version-file.outputs.NEW_VERSION }}'"
       - name: Create Release
         id: create_release
         uses: marvinpinto/action-automatic-releases@v1.2.1
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: v${{ steps.bump-version-file.outputs.NEW_VERSION }}
-          release_name: "Release numactl ${{ steps.bump-version-file.outputs.NEW_VERSION }}"
+          title: "Release numactl ${{ steps.bump-version-file.outputs.NEW_VERSION }}"
           draft: true
           prerelease: false
-          files: |
-            numactl-*.tar.gz
+          files: numactl-*.tar.gz
